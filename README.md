@@ -311,6 +311,7 @@ All tunables are defined as PHP constants at the top of the file. Key ones:
    ```
 3. **Set up `fail2ban` or a WAF** in front of the endpoint to block IPs that repeatedly trigger 429s.
 4. **Back up `payloads.sqlite`** if the payloads are valuable. The current script has no backup mechanism.
+5. **Move `payloads.sqlite`** into a different folder outside the `www` so that it cannot be dowloaded via a direct HTTP GET. Configure the `DB_PATH` variable accordingly.
 
 ---
 
